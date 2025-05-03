@@ -60,7 +60,21 @@
 		>
 			© 2025 Moli-Doki Lab
 			<span class="mx-4">|</span>
-			<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">
+			<a
+				href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002018207"
+				target="_blank"
+				rel="noopener"
+				class="hover:text-[#e8447a] transition-colors"
+			>
+				浙公网安备33011002018207号
+			</a>
+			<span class="mx-4">|</span>
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+				rel="noopener"
+				class="hover:text-[#e8447a] transition-colors"
+			>
 				浙ICP备2025161223号
 			</a>
 		</div>

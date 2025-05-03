@@ -12,6 +12,7 @@ export default {
 			fontFamily: {
 				comic: [
 					'"Comic Sans MS"',
+					"'Yozai Medium'",
 					"Hannotate SC",
 					'"Courier New"',
 					"monospace",
