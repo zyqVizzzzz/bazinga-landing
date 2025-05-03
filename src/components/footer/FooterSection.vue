@@ -7,7 +7,7 @@
 			<!-- 品牌信息 -->
 			<div class="brand-info">
 				<h3 class="text-xl font-bold mb-4">魔力多奇实验室</h3>
-				<p class="text-sm opacity-70">Tell a Friend</p>
+				<p class="text-sm opacity-70">Today's vibe is SUPER cool</p>
 			</div>
 
 			<!-- 快速链接 -->
@@ -42,8 +42,11 @@
 					>
 						<RednoteIcon class="w-5 h-5" />
 					</a>
-					<a href="#" class="hover:text-[#e8447a] transition-colors">
-						<i class="bi bi-github text-xl"></i>
+					<a
+						@click="handleWechatClick"
+						class="hover:text-[#e8447a] transition-colors cursor-pointer"
+					>
+						<i class="bi bi-wechat text-xl"></i>
 					</a>
 					<a href="#" class="hover:text-[#e8447a] transition-colors">
 						<i class="bi bi-envelope text-xl"></i>
@@ -61,8 +64,25 @@
 				浙ICP备2025161223号
 			</a>
 		</div>
+		<dialog id="wechat_modal" class="modal">
+			<div class="modal-box bg-white">
+				<img
+					src="../../assets/411745910725_.pic_hd.jpg"
+					alt="微信二维码"
+					class="w-full rounded-lg"
+				/>
+			</div>
+			<form method="dialog" class="modal-backdrop">
+				<button>关闭</button>
+			</form>
+		</dialog>
 	</div>
 </template>
 <script setup>
 import RednoteIcon from "@/components/RednoteIcon.vue";
+
+const handleWechatClick = () => {
+	document.getElementById("wechat_modal").showModal();
+};
 </script>
+<style></style>
