@@ -37,7 +37,7 @@
 						<i class="bi bi-twitter text-xl"></i>
 					</a>
 					<a
-						href="#"
+						@click="handleRedClick"
 						class="hover:text-[#e8447a] transition-colors flex items-center relative top-[1px]"
 					>
 						<RednoteIcon class="w-5 h-5" />
@@ -90,6 +90,18 @@
 				<button>关闭</button>
 			</form>
 		</dialog>
+		<dialog id="red_modal" class="modal">
+			<div class="modal-box bg-white">
+				<img
+					src="../../assets/541746282553_.pic.jpg"
+					alt="小红书二维码"
+					class="w-full rounded-lg"
+				/>
+			</div>
+			<form method="dialog" class="modal-backdrop">
+				<button>关闭</button>
+			</form>
+		</dialog>
 	</div>
 </template>
 <script setup>
@@ -97,6 +109,10 @@ import RednoteIcon from "@/components/RednoteIcon.vue";
 
 const handleWechatClick = () => {
 	document.getElementById("wechat_modal").showModal();
+};
+
+const handleRedClick = () => {
+	document.getElementById("red_modal").showModal();
 };
 </script>
 <style></style>
