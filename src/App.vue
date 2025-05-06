@@ -1,11 +1,15 @@
 <template>
-	<div class="manual-container min-h-screen bg-[#f1f1f1] font-comic">
-		<div class="manual-content max-w-4xl mx-auto px-4 py-8 pb-0">
+	<div
+		class="manual-container min-h-screen bg-[#f1f1f1] font-comic flex items-center justify-center"
+	>
+		<div
+			class="manual-content max-w-4xl mx-auto py-8 pb-0 h-[100vh] relative flex items-center justify-center"
+		>
 			<!-- 说明书封面 -->
 			<section
-				class="manual-cover mb-16 bg-black text-white p-8 rounded-lg shadow-retro"
+				class="manual-cover mb-16 bg-black text-white p-8 pb-2 rounded-lg shadow-retro"
 			>
-				<div class="cover-header border-b-4 border-white pb-8 mb-8">
+				<div class="cover-header border-b-4 border-white pb-12 mb-8">
 					<div class="text-white text-center">
 						<div class="sg-logo mb-4">
 							<div
@@ -52,7 +56,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cover-content text-white">
+				<div class="cover-content text-white mt-12">
 					<div class="grid grid-cols-2 gap-8">
 						<!-- 左侧产品图 -->
 						<div class="product-image border-2 border-white p-1">
@@ -86,225 +90,13 @@
 						</div>
 					</div>
 				</div>
-			</section>
-
-			<section class="chapter">
-				<div
-					class="demo-section bg-white p-8 rounded-lg shadow-retro relative overflow-hidden"
-				>
-					<!-- 添加复古装饰条纹 -->
-					<div class="absolute top-0 left-0 w-full h-2 bg-[#222]"></div>
-					<div class="absolute bottom-0 left-0 w-full h-2 bg-[#222]"></div>
-					<h2 class="text-3xl font-bold mb-8 text-center">DEMO</h2>
-
-					<div class="demo-grid grid grid-cols-2 gap-8 mb-12">
-						<!-- Demo 1: 文章学习 -->
-						<div class="demo-card comic-card relative">
-							<div
-								class="card-inner border-2 border-black p-4 bg-white relative z-10"
-							>
-								<div class="card-header relative mb-4">
-									<h3 class="text-xl font-bold">
-										<span class="number-badge">01</span>
-										精选内容学习
-									</h3>
-									<div
-										class="dot-grid absolute right-2 top-2 grid grid-cols-3 gap-[3px]"
-									>
-										<div
-											v-for="i in 9"
-											:key="i"
-											class="w-[3px] h-[3px] bg-black rounded-full"
-										></div>
-									</div>
-								</div>
-								<div
-									class="demo-placeholder bg-gray-100 h-48 flex items-center justify-center relative overflow-hidden group"
-									@click="openVideoModal(demoVideo1)"
-								>
-									<div class="comic-stripes"></div>
-									<img
-										:src="demo1"
-										alt="Demo Preview"
-										class="w-full h-full object-cover relative z-10"
-									/>
-									<!-- 添加遮罩和播放按钮 -->
-									<div
-										class="absolute inset-0 bg-black bg-opacity-40 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-									>
-										<div
-											class="transform transition-transform duration-300 group-hover:scale-110"
-										>
-											<i class="bi bi-play-circle-fill text-white text-5xl"></i>
-										</div>
-									</div>
-								</div>
-								<button
-									class="demo-btn comic-btn mt-4 w-full py-2 px-4"
-									@click="openVideoModal(demoVideo1)"
-								>
-									<span class="relative z-10">查看演示</span>
-								</button>
-							</div>
-						</div>
-
-						<!-- Demo 2: AI 对话 -->
-						<div class="demo-card comic-card relative">
-							<div
-								class="card-inner border-2 border-black p-4 bg-white relative z-10"
-							>
-								<div class="card-header relative mb-4">
-									<h3 class="text-xl font-bold">
-										<span class="number-badge">02</span>
-										任意内容生成笔记
-									</h3>
-									<div
-										class="dot-grid absolute right-2 top-2 grid grid-cols-3 gap-[3px]"
-									>
-										<div
-											v-for="i in 9"
-											:key="i"
-											class="w-[3px] h-[3px] bg-black rounded-full"
-										></div>
-									</div>
-								</div>
-								<div
-									class="demo-placeholder bg-gray-100 h-48 flex items-center justify-center relative overflow-hidden group"
-									@click="openVideoModal(demoVideo2)"
-								>
-									<div class="comic-stripes"></div>
-									<img
-										:src="demo2"
-										alt="Demo Preview"
-										class="w-full h-full object-cover relative z-10"
-									/>
-									<!-- 添加遮罩和播放按钮 -->
-									<div
-										class="absolute inset-0 bg-black bg-opacity-40 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-									>
-										<div
-											class="transform transition-transform duration-300 group-hover:scale-110"
-										>
-											<i class="bi bi-play-circle-fill text-white text-5xl"></i>
-										</div>
-									</div>
-								</div>
-								<button
-									class="demo-btn comic-btn mt-4 w-full py-2 px-4"
-									@click="openVideoModal(demoVideo2)"
-								>
-									<span class="relative z-10">查看演示</span>
-								</button>
-							</div>
-						</div>
-
-						<!-- Demo 3: 自动检索知识点 -->
-						<div class="demo-card comic-card relative">
-							<div
-								class="card-inner border-2 border-black p-4 bg-white relative z-10"
-							>
-								<div class="card-header relative mb-4">
-									<h3 class="text-xl font-bold">
-										<span class="number-badge">03</span>
-										智能检索知识点
-									</h3>
-									<div
-										class="dot-grid absolute right-2 top-2 grid grid-cols-3 gap-[3px]"
-									>
-										<div
-											v-for="i in 9"
-											:key="i"
-											class="w-[3px] h-[3px] bg-black rounded-full"
-										></div>
-									</div>
-								</div>
-								<div
-									class="demo-placeholder bg-gray-100 h-48 flex items-center justify-center relative overflow-hidden group"
-									@click="openVideoModal(demoVideo3)"
-								>
-									<div class="comic-stripes"></div>
-									<img
-										:src="demo3"
-										alt="Demo Preview"
-										class="w-full h-full object-cover relative z-10"
-									/>
-									<!-- 添加遮罩和播放按钮 -->
-									<div
-										class="absolute inset-0 bg-black bg-opacity-40 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-									>
-										<div
-											class="transform transition-transform duration-300 group-hover:scale-110"
-										>
-											<i class="bi bi-play-circle-fill text-white text-5xl"></i>
-										</div>
-									</div>
-								</div>
-								<button
-									class="demo-btn comic-btn mt-4 w-full py-2 px-4"
-									@click="openVideoModal(demoVideo3)"
-								>
-									<span class="relative z-10">查看演示</span>
-								</button>
-							</div>
-						</div>
-
-						<!-- Demo 4: 播客生成 -->
-						<div class="demo-card comic-card relative">
-							<div
-								class="card-inner border-2 border-black p-4 bg-white relative z-10"
-							>
-								<div class="card-header relative mb-4">
-									<h3 class="text-xl font-bold">
-										<span class="number-badge">04</span>
-										播客生成
-									</h3>
-									<div
-										class="dot-grid absolute right-2 top-2 grid grid-cols-3 gap-[3px]"
-									>
-										<div
-											v-for="i in 9"
-											:key="i"
-											class="w-[3px] h-[3px] bg-black rounded-full"
-										></div>
-									</div>
-								</div>
-								<div
-									class="demo-placeholder bg-gray-100 h-48 flex items-center justify-center relative overflow-hidden group"
-									@click="openVideoModal(demoVideo4)"
-								>
-									<div class="comic-stripes"></div>
-									<img
-										:src="demo4"
-										alt="Demo Preview"
-										class="w-full h-full object-cover relative z-10"
-									/>
-									<!-- 添加遮罩和播放按钮 -->
-									<div
-										class="absolute inset-0 bg-black bg-opacity-40 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-									>
-										<div
-											class="transform transition-transform duration-300 group-hover:scale-110"
-										>
-											<i class="bi bi-play-circle-fill text-white text-5xl"></i>
-										</div>
-									</div>
-								</div>
-								<button
-									class="demo-btn comic-btn mt-4 w-full py-2 px-4"
-									@click="openVideoModal(demoVideo4)"
-								>
-									<span class="relative z-10">查看演示</span>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
+				<FooterSection />
 			</section>
 
 			<!-- 说明书内容 -->
-			<section class="chapter !pb-0 !border-b-0">
-				<FooterSection />
-			</section>
+			<!-- <section class="chapter !pb-0 !border-b-0"> -->
+
+			<!-- </section> -->
 		</div>
 	</div>
 	<VideoModal
@@ -326,14 +118,6 @@ import VideoModal from "./components/VideoModal.vue";
 import card from "./assets/003_card.png";
 import podcast from "./assets/004_podcast.png";
 import editorCard from "./assets/005_editor_card.png";
-import demoVideo1 from "./assets/demo1.mp4";
-import demoVideo2 from "./assets/demo2.mp4";
-import demoVideo3 from "./assets/demo3.mp4";
-import demoVideo4 from "./assets/demo4.mp4";
-import demo1 from "./assets/demo1.png";
-import demo2 from "./assets/demo2.png";
-import demo3 from "./assets/demo3.png";
-import demo4 from "./assets/demo4.png";
 
 const slides = [
 	{ src: card, alt: "Card System" },
@@ -464,18 +248,18 @@ const openVideoModal = (videoSrc) => {
 }
 
 .demo-section {
-	border: 2px solid #000;
+	// border: 2px solid #000;
 
-	&::before {
-		content: "";
-		position: absolute;
-		top: 2px;
-		left: 2px;
-		right: 2px;
-		bottom: 2px;
-		border: 1px dashed rgba(0, 0, 0, 0.2);
-		pointer-events: none;
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 2px;
+	// 	left: 2px;
+	// 	right: 2px;
+	// 	bottom: 2px;
+	// 	border: 1px dashed rgba(0, 0, 0, 0.2);
+	// 	pointer-events: none;
+	// }
 }
 
 .comic-card {
@@ -683,5 +467,16 @@ const openVideoModal = (videoSrc) => {
 	animation: comicPop 1.2s cubic-bezier(0.68, -0.6, 0.32, 1.6) var(--delay)
 			forwards,
 		tvFlicker 2s linear 1.5s infinite alternate;
+}
+.video-container {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+	video {
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.01);
+		}
+	}
 }
 </style>

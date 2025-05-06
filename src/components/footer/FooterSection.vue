@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="footer-section bg-black text-white p-8 pb-4 rounded-lg shadow-retro"
+		class="footer-section bg-black text-white p-8 pb-4 mt-12 w-full border-t-4 border-white"
 		style="border-bottom-right-radius: 0; border-bottom-left-radius: 0"
 	>
 		<div class="grid grid-cols-3 gap-8">
